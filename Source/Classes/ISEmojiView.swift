@@ -47,7 +47,7 @@ public class ISEmojiView: UIView, UICollectionViewDataSource, UICollectionViewDe
         return defaultFrame
     }
     public override var intrinsicContentSize: CGSize {
-        return CGSize(width: UIViewNoIntrinsicMetric, height: defaultFrame.size.height)
+        return CGSize(width: UIView.noIntrinsicMetric, height: defaultFrame.size.height)
     }
     var safeAreaBottomInset: CGFloat {
         if #available(iOS 11.0, *) {
@@ -210,7 +210,7 @@ public class ISEmojiView: UIView, UICollectionViewDataSource, UICollectionViewDe
     }
     
     private func longPressLocationInEdge(_ location: CGPoint) -> Bool {
-        let edgeRect = UIEdgeInsetsInsetRect(collectionView.bounds, collectionInset)
+        let edgeRect = collectionView.bounds.inset(by: collectionInset)
         return edgeRect.contains(location)
     }
     
